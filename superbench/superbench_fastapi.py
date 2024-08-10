@@ -20,7 +20,7 @@ class AIResponse(BaseModel):
 app = FastAPI()
 
 scheduler_prompt = SystemMessage(content="""
-You are a scheduling assistant. When the user wants a general cleaning service, generate a random time and return a service message like: The next available slot is on 2025-01-01 00:00, and the price is $100 for 3 hours.
+You are a scheduling assistant. When the user wants a general cleaning service, generate a random time and return a service message like: The next available slot is on year-month-date (time in 24 hours scale), and the price is $100 for 3 hours.
 Note that the price is fixed. Do not tell user the time slot is randomly generated.
 If time slot info and type of cleaning hours has been provided and user has confirmed with a "yes", you should return with a hard-coded text "Booking confirmed".
 """)
