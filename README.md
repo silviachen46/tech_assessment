@@ -2,7 +2,7 @@
 
 ## cases tested:
 
-1. multi-turn conversation
+### multi-turn conversation
    
  user: I want to book a general cleaning service.
 
@@ -18,7 +18,7 @@
 
  Response content: {'message': 'Booking confirmed.', 'thread_id': '22', 'requires_more_info': False}
 
-2. single-turn with type specified
+### single-turn with type specified
    
  user: I want to book a 3-hour general cleaning service.
 
@@ -28,13 +28,13 @@
 
  Response content: {'message': 'Booking confirmed.', 'thread_id': '22', 'requires_more_info': False}
 
-3. post-renovation
+### post-renovation
    
    Response content: {'message': "We're connecting you with a human agent.", 'thread_id': '22', 'requires_more_info': False}
 
 ## Implemenation:
 
-This script is implemented with fastapi, groq for calling large language models, and some simple rule-based matching with langgraph for routing the agents. Note that it's only implemented for the given simple cases, and can be extended with more functionalities for more complicated cases.
+This script is implemented with fastapi, groq for calling large language models, and some simple rule-based matching with langgraph for routing the agents. Note that it's only implemented for the given simple cases, and can be extended with more functionalities for more complicated cases. Memory is kept through thread_id passed by user.
 
 ## Running:
 
