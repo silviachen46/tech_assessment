@@ -106,8 +106,7 @@ async def chat(user_input: UserInput):
     
     thread_memory[thread_id]["messages"].append(HumanMessage(content=user_input.message))
     result = app_workflow.invoke(thread_memory[thread_id], {"recursion_limit": 3})
-    if thread_memory[thread_id]["current_state"]:
-        thread_memory[thread_id] = result
+    
     thread_memory[thread_id]["messages"] = result["messages"]
     
     last_ai_message = next((msg for msg in reversed(result["messages"]) if isinstance(msg, AIMessage)), None)
