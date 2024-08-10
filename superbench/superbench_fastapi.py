@@ -38,7 +38,7 @@ If type information is already provided, respond with "all information collected
 If information is missing, ask for the specific missing information.
 """)
 
-os.environ['GROQ_API_KEY'] = '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'
+os.environ['GROQ_API_KEY'] = 'groq_api_key_here'
 
 scheduler_model = ChatGroq(model="llama3-8b-8192")
 guardrail_model = ChatGroq(model="llama3-8b-8192")
